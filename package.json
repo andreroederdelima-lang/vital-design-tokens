@@ -1,0 +1,11 @@
+{
+  "name": "vital-design-tokens",
+  "version": "1.0.0",
+  "description": "Fonte única de verdade dos tokens de marca da Vital (cor, fonte, raio, paleta de gráfico) — consumida via dependência git com tag fixa.",
+  "license": "UNLICENSED",
+  "private": true,
+  "files": [
+    "tokens.css",
+    "README.md"
+  ]
+}

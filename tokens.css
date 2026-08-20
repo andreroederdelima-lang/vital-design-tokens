@@ -1,0 +1,74 @@
+/**
+ * vital-design-tokens — fonte única de verdade dos tokens de marca da Vital.
+ *
+ * Consumido por comissao.vital, vital-credenciados e RescueDeck via:
+ *   @import "vital-design-tokens/tokens.css";
+ * logo após o @import "tailwindcss" do próprio repo.
+ *
+ * POR QUE ESTE ARQUIVO EXISTE: os três sistemas nasceram com a mesma stack
+ * (Tailwind v4 CSS-first + shadcn "new-york") sem terem sido combinados, e cada
+ * um foi divergindo aos poucos — o token dizia uma cor, a tela usava outra
+ * (hex hardcoded copiado e colado, cada cópia se afastando um pouco da
+ * anterior). Isto aqui existe pra ser a ÚNICA cópia. Trocar cor/fonte da marca
+ * é editar este arquivo, taggear uma versão nova, e cada repo faz bump quando
+ * quiser — nunca copiar o valor de novo.
+ *
+ * Extraído 1:1 do RescueDeck em 20/08/2026 — era o único dos três sistemas
+ * onde o token declarado batia com a cor realmente usada na tela.
+ *
+ * NÃO inclui tokens neutros (--background, --foreground, --border, --muted,
+ * --sidebar) nem o wiring @theme inline — isso fica local a cada repo, de
+ * propósito: nenhum drift foi encontrado neles, e são "wiring", não "marca".
+ */
+
+:root {
+  --font-sans: "Ubuntu", ui-sans-serif, system-ui, sans-serif;
+  --radius: 0.75rem;
+
+  /* Marca Vital — Teal #00645F */
+  --primary: oklch(0.42 0.08 175); /* #00645F */
+  --primary-foreground: oklch(1 0 0);
+  /* Hover/shade manual — substitui hex escolhidos à mão tipo #1a8587/#1e9d9f */
+  --primary-hover: oklch(0.32 0.08 175); /* #004d49 */
+
+  --sidebar-primary: oklch(0.42 0.08 175); /* #00645F */
+  --sidebar-primary-foreground: oklch(1 0 0);
+
+  /* Escala teal completa — alinhada com subscriber-portal */
+  --color-teal-50: #e6f5f4;
+  --color-teal-100: #b3e0de;
+  --color-teal-200: #80cbc8;
+  --color-teal-300: #4db6b2;
+  --color-teal-400: #2b9591;
+  --color-teal-500: #2b9591;
+  --color-teal-600: #00645f;
+  --color-teal-700: #004d49;
+  --color-teal-800: #003633;
+  --color-teal-900: #001f1d;
+  --color-teal-950: #001210;
+
+  /* Ocre accent — segunda cor de marca no RescueDeck */
+  --color-ocre-400: #b5ae94;
+
+  /* Paleta de gráfico derivada da matiz da marca (175), não de azul genérico */
+  --chart-1: oklch(0.62 0.08 175);
+  --chart-2: oklch(0.52 0.08 175);
+  --chart-3: oklch(0.42 0.08 175);
+  --chart-4: oklch(0.32 0.08 175);
+  --chart-5: oklch(0.22 0.08 175);
+}
+
+.dark {
+  --primary: oklch(0.42 0.08 175); /* #00645F */
+  --primary-foreground: oklch(0.985 0 0);
+  --primary-hover: oklch(0.52 0.08 175);
+
+  --sidebar-primary: oklch(0.42 0.08 175);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+
+  --chart-1: oklch(0.65 0.1 175);
+  --chart-2: oklch(0.55 0.1 175);
+  --chart-3: oklch(0.5 0.1 175);
+  --chart-4: oklch(0.45 0.1 175);
+  --chart-5: oklch(0.4 0.1 175);
+}
