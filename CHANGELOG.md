@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.1 — 2026-08-20
+
+Fix antes do primeiro consumo real: `--font-sans` estava solto dentro de `:root`, fora de
+qualquer bloco `@theme`. No Tailwind v4 isso NÃO gera a utility `font-sans` — a fonte cairia
+em silêncio pro fallback do sistema, exatamente o bug que este pacote existe pra evitar. Movido
+para `@theme { --font-sans: ...; }`.
+
 ## 1.0.0 — 2026-08-20
 
 Primeira versão. Tokens extraídos 1:1 do RescueDeck (`rescuedeck-producao`), único dos três

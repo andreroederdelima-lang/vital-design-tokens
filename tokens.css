@@ -21,8 +21,17 @@
  * propósito: nenhum drift foi encontrado neles, e são "wiring", não "marca".
  */
 
-:root {
+/*
+ * @theme (não @theme inline): só tem valor literal aqui, sem var(--x) — não precisa da
+ * indireção do "inline". É o que faz o Tailwind gerar a classe utilitária `font-sans`.
+ * Um --font-sans solto dentro de :root NÃO vira utility — foi testado e corrigido antes
+ * de qualquer repo consumir esta v1.0.0/v1.0.1.
+ */
+@theme {
   --font-sans: "Ubuntu", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
   --radius: 0.75rem;
 
   /* Marca Vital — Teal #00645F */
