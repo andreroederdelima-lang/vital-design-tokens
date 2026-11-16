@@ -1,15 +1,12 @@
 
 ## Nota de decisão (16/11/2026) — merge
 
-- Merge liberado com CI verde, sem OK por PR, em todos os repos **exceto rescuedeck-producao**.
+- Merge liberado com CI verde, sem OK por PR (exceto regras do RescueDeck abaixo).
 - Continua exigindo OK explícito: PR com migração de banco; PR que altera cobrança, pagamento ou envio de mensagem a cliente.
-- Em plataforma.comissao.vital: CI verde + revisão Codex sem findings antes do merge.
+- Em plataforma.comissao.vital: CI verde + revisão Codex sem findings.
+- Em rescuedeck-producao: CI verde só para merge em `develop`; nada entra na `main` sem revisão do Renann.
 - Backup na mesma sessão antes de migração/deploy em produção.
 
-
-# ROADMAP — vital-design-tokens
-
-> Pacote compartilhado de design tokens da Vital. Sem fases de produto; este arquivo registra decisões operacionais do executor.
 
 ## Nota de decisão (15/11/2026)
 
