@@ -18,7 +18,7 @@ Sem instrução explícita de modo, o modo é "siga". Não pergunte "item a item
 Ao concluir um item, registre no ROADMAP e continue. Não pare entre itens.
 
 ## 3. Bloqueio não é parada
-Item que depende do André (decisão de produto, chave, item [!], auditoria pendente): faça tudo o que não depende dele, abra o PR, registre a pendência numerada com o que falta em uma frase e a opção que você recomenda, e passe para o próximo item executável do mesmo projeto, até a fase 8. Só pare quando não houver nenhum item executável nesse intervalo.
+Item que depende do André (decisão, chave, item [!], auditoria pendente, OK de merge): faça tudo o que não depende dele, abra o PR, registre a pendência numerada com o que falta em uma frase e a opção que você recomenda, e passe para o próximo item executável do mesmo projeto, até a fase 8. Só pare quando não houver nenhum item executável nesse intervalo.
 Fases 9 a 14 (cobrança, piloto, white label, comercial, marketing, suporte) só com pedido explícito do André.
 Documento, rascunho ou scaffold não fecha item cujo critério pede algo funcionando. Se só dá para entregar o documento, registre como pendência e não marque o item.
 Item cujo critério contradiz o CLAUDE.md do projeto: marque "- [ ] (não se aplica: <motivo>)", registre a pendência e siga.
@@ -27,21 +27,7 @@ Item cujo critério contradiz o CLAUDE.md do projeto: marque "- [ ] (não se apl
 - Comando destrutivo em banco de produção sem backup feito na mesma sessão.
 - Dinheiro, cobrança real ou mensagem enviada a cliente real.
 - Trocar segredo de produção.
-
-### Merge (decisão André 16/11/2026)
-Vale para **todos os repositórios**: merge liberado com a CI verde, **sem pedir OK do André por PR**.
-
-Exceções que **continuam exigindo OK explícito do André** antes do merge:
-- PR com migração de banco;
-- PR que altera cobrança, pagamento ou envio de mensagem a cliente.
-
-Em `plataforma.comissao.vital`, além da CI verde, exija **revisão do Codex sem findings** antes do merge.
-
-Em `rescuedeck-producao`:
-- Merge liberado com a CI verde **apenas para a branch `develop`** (sem OK por PR).
-- **Nada entra na `main` sem a revisão do Renann** (sem auto-merge para `main`).
-
-Backup na mesma sessão continua obrigatório antes de migração ou deploy em produção. Esta cláusula prevalece sobre o CLAUDE.md no que diz respeito a merge (no RescueDeck, a regra `develop`/`main`+Renann acima prevalece).
+Merge liberado com a CI verde, sem pedir OK do André por PR, em todos os repositórios exceto rescuedeck-producao. Exceções que continuam exigindo OK explícito do André: PR com migração de banco e PR que altera cobrança, pagamento ou envio de mensagem a cliente. Na plataforma.comissao.vital, além da CI verde, exigir revisão do Codex sem findings antes do merge.
 
 ## 5. Ambiente local sem pedir nada
 - Falta .env: gere a partir do .env.example com valores de desenvolvimento (segredo aleatório, banco local). Nunca aponte para banco, projeto ou domínio de produção.
