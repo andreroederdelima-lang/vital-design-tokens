@@ -1,3 +1,9 @@
+
+## Nota de decisão (16/11/2026)
+
+- Merge liberado com CI verde, sem pedir OK por PR (decisão André).
+- Backup na mesma sessão continua obrigatório antes de migração ou deploy em produção.
+
 # ROADMAP — vital-design-tokens
 
 > Pacote compartilhado de design tokens da Vital. Sem fases de produto; este arquivo registra decisões operacionais do executor.
