@@ -29,7 +29,7 @@ Item cujo critério contradiz o CLAUDE.md do projeto: marque "- [ ] (não se apl
 - Trocar segredo de produção.
 
 ### Merge (decisão André 16/11/2026)
-Vale para **todos os repositórios exceto as regras específicas de `rescuedeck-producao` abaixo**: merge liberado com a CI verde, **sem pedir OK do André por PR**.
+Vale para **todos os repositórios**: merge liberado com a CI verde, **sem pedir OK do André por PR**.
 
 Exceções que **continuam exigindo OK explícito do André** antes do merge:
 - PR com migração de banco;
@@ -37,11 +37,9 @@ Exceções que **continuam exigindo OK explícito do André** antes do merge:
 
 Em `plataforma.comissao.vital`, além da CI verde, exija **revisão do Codex sem findings** antes do merge.
 
-Em `rescuedeck-producao`:
-- Merge liberado com a CI verde **apenas para a branch `develop`**.
-- **Nada entra na `main` sem a revisão do Renann.**
+Em `rescuedeck-producao`: **nenhum merge automático**; todo merge exige OK explícito, que pode ser do **André ou do Renann** (qualquer um dos dois).
 
-Backup na mesma sessão continua obrigatório antes de migração ou deploy em produção. Esta cláusula prevalece sobre o CLAUDE.md no que diz respeito a merge (no RescueDeck, a regra da `main`/Renann acima prevalece).
+Backup na mesma sessão continua obrigatório antes de migração ou deploy em produção. Esta cláusula prevalece sobre o CLAUDE.md no que diz respeito a merge (no RescueDeck, a regra de OK André/Renann acima prevalece).
 
 ## 5. Ambiente local sem pedir nada
 - Falta .env: gere a partir do .env.example com valores de desenvolvimento (segredo aleatório, banco local). Nunca aponte para banco, projeto ou domínio de produção.
