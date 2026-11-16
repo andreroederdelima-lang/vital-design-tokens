@@ -27,7 +27,17 @@ Item cujo critério contradiz o CLAUDE.md do projeto: marque "- [ ] (não se apl
 - Comando destrutivo em banco de produção sem backup feito na mesma sessão.
 - Dinheiro, cobrança real ou mensagem enviada a cliente real.
 - Trocar segredo de produção.
-Merge e deploy estão liberados com a CI verde (e backup na mesma sessão quando houver migração ou deploy em produção). Decisão André 16/11/2026: **não peça OK por PR** — com CI verde, mergeie. Esta cláusula prevalece sobre o CLAUDE.md no que diz respeito a merge.
+
+### Merge (decisão André 16/11/2026)
+Vale para **todos os repositórios exceto `rescuedeck-producao`**: merge liberado com a CI verde, **sem pedir OK do André por PR**.
+
+Exceções que **continuam exigindo OK explícito do André** antes do merge:
+- PR com migração de banco;
+- PR que altera cobrança, pagamento ou envio de mensagem a cliente.
+
+Em `plataforma.comissao.vital`, além da CI verde, exija **revisão do Codex sem findings** antes do merge.
+
+Backup na mesma sessão continua obrigatório antes de migração ou deploy em produção. Esta cláusula prevalece sobre o CLAUDE.md no que diz respeito a merge (exceto em `rescuedeck-producao`, onde vale o CLAUDE.md daquele repo).
 
 ## 5. Ambiente local sem pedir nada
 - Falta .env: gere a partir do .env.example com valores de desenvolvimento (segredo aleatório, banco local). Nunca aponte para banco, projeto ou domínio de produção.
