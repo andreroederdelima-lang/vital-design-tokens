@@ -37,9 +37,11 @@ Exceções que **continuam exigindo OK explícito do André** antes do merge:
 
 Em `plataforma.comissao.vital`, além da CI verde, exija **revisão do Codex sem findings** antes do merge.
 
-Em `rescuedeck-producao`: **nenhum merge automático**; todo merge exige OK explícito, que pode ser do **André ou do Renann** (qualquer um dos dois).
+Em `rescuedeck-producao`:
+- Merge liberado com a CI verde **apenas para a branch `develop`** (sem OK por PR).
+- **Nada entra na `main` sem a revisão do Renann** (sem auto-merge para `main`).
 
-Backup na mesma sessão continua obrigatório antes de migração ou deploy em produção. Esta cláusula prevalece sobre o CLAUDE.md no que diz respeito a merge (no RescueDeck, a regra de OK André/Renann acima prevalece).
+Backup na mesma sessão continua obrigatório antes de migração ou deploy em produção. Esta cláusula prevalece sobre o CLAUDE.md no que diz respeito a merge (no RescueDeck, a regra `develop`/`main`+Renann acima prevalece).
 
 ## 5. Ambiente local sem pedir nada
 - Falta .env: gere a partir do .env.example com valores de desenvolvimento (segredo aleatório, banco local). Nunca aponte para banco, projeto ou domínio de produção.
