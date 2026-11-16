@@ -4,7 +4,7 @@
 - Merge liberado com CI verde, sem OK por PR, em todos os repos.
 - Continua exigindo OK explícito do André: migração de banco; cobrança / pagamento / mensagem a cliente.
 - Em plataforma.comissao.vital: CI verde + Codex sem findings.
-- Em rescuedeck-producao: nenhum merge automático; todo merge exige OK explícito do André ou do Renann.
+- Em rescuedeck-producao: CI verde só para merge em `develop`; nada entra na `main` sem revisão do Renann.
 - Backup na mesma sessão antes de migração/deploy em produção.
 
 
